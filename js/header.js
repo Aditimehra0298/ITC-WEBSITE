@@ -2,21 +2,24 @@
   const mount = document.getElementById("site-header-mount");
   const isSub = Boolean(mount);
   const prefix = isSub ? "../" : "";
-  const active = mount?.dataset.active || "home";
+  const active = mount?.dataset.active || "";
 
-  const services = [
+  const leftServices = [
+    ["calibration", "Calibration"],
     ["electrical", "Electrical"],
     ["electro-medical", "Electro-Medical"],
-    ["laboratory", "Laboratory/Indicating"],
-    ["environmental", "Environmental/IP"],
-    ["mechanical", "Mechanical/Chemical"],
-    ["calibration", "Calibration"],
     ["electronic", "Electronic"],
-    ["photometry", "Photometry"],
     ["emc", "EMC"],
-    ["packaging", "Packaging"],
-    ["software", "Software"],
+    ["environmental", "Environmental/IP"],
+  ];
+
+  const rightServices = [
     ["information-security", "Information Security"],
+    ["laboratory", "Laboratory/Indicating"],
+    ["mechanical", "Mechanical/Chemical"],
+    ["packaging", "Packaging"],
+    ["photometry", "Photometry"],
+    ["software", "Software"],
   ];
 
   function subLinks(slug, label) {
@@ -25,21 +28,22 @@
       <ul class="sub-menu">
         <li><a href="${base}">${label} Overview</a></li>
         <li><a href="${base}#standards">Standards</a></li>
-        <li><a href="${base}#process">Test Process</a></li>
-        <li><a href="${prefix}index.html#quote">Request a Quote</a></li>
+        <li><a href="${prefix}pages/quote.html">Request a Quote</a></li>
       </ul>`;
   }
 
-  const serviceItems = services
-    .map(([slug, label]) => {
-      const cls = active === slug ? " is-active" : "";
-      return `
+  function items(list) {
+    return list
+      .map(([slug, label]) => {
+        const cls = active === slug ? " is-active" : "";
+        return `
         <li class="has-sub">
           <a class="nav-link${cls}" href="${prefix}pages/${slug}.html">${label} <span class="caret" aria-hidden="true">▾</span></a>
           ${subLinks(slug, label)}
         </li>`;
-    })
-    .join("");
+      })
+      .join("");
+  }
 
   const header = `
   <header class="site-header">
@@ -65,6 +69,7 @@
             <span>Gurugram, India</span>
           </span>
         </div>
+        <p class="header-company">Institute of Testing &amp; Certification India Pvt. Ltd.</p>
         <div class="header-top-actions">
           <form class="search-bar" role="search" action="#" method="get">
             <input type="search" name="q" placeholder="Search..." aria-label="Search" />
@@ -72,33 +77,23 @@
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
             </button>
           </form>
-          <a class="btn btn-primary btn-quote" href="${prefix}index.html#quote">Get a Quote <span aria-hidden="true">→</span></a>
+          <a class="btn btn-primary btn-quote" href="${prefix}pages/quote.html">Get a Quote <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </div>
     <div class="header-main">
       <div class="header-main-inner">
-        <a class="brand" href="${prefix}index.html" aria-label="ITC India Home">
-          <img src="${prefix}assets/logo.png" alt="ITC India" class="brand-logo" />
-          <span class="brand-tagline">Institute of Testing &amp; Certification India Pvt. Ltd.</span>
-        </a>
         <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
-        <nav class="main-nav" aria-label="Primary">
-          <ul class="nav-list">
-            <li><a class="nav-link${active === "home" ? " is-active" : ""}" href="${prefix}index.html">Home</a></li>
-            <li class="has-sub">
-              <a class="nav-link${active === "about" ? " is-active" : ""}" href="${prefix}pages/about.html">About Us <span class="caret" aria-hidden="true">▾</span></a>
-              <ul class="sub-menu">
-                <li><a href="${prefix}pages/about.html">Company Overview</a></li>
-                <li><a href="${prefix}pages/about.html#accreditation">Accreditation</a></li>
-                <li><a href="${prefix}pages/about.html#facilities">Facilities</a></li>
-                <li><a href="${prefix}pages/about.html#why">Why Choose ITC</a></li>
-              </ul>
-            </li>
-            ${serviceItems}
-          </ul>
+        <nav class="main-nav main-nav--left" aria-label="Primary left">
+          <ul class="nav-list">${items(leftServices)}</ul>
+        </nav>
+        <a class="brand" href="${prefix}index.html" aria-label="ITC India Home">
+          <img src="${prefix}assets/logo.png" alt="ITC India" class="brand-logo" />
+        </a>
+        <nav class="main-nav main-nav--right" aria-label="Primary right">
+          <ul class="nav-list">${items(rightServices)}</ul>
         </nav>
       </div>
     </div>

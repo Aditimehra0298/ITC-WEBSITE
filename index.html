@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=5" />
+  <link rel="stylesheet" href="css/styles.css?v=19" />
 </head>
 <body>
   <header class="site-header">
@@ -36,6 +36,8 @@
           </span>
         </div>
 
+        <p class="header-company">Institute of Testing &amp; Certification India Pvt. Ltd.</p>
+
         <div class="header-top-actions">
           <form class="search-bar" role="search" action="#" method="get">
             <input type="search" name="q" placeholder="Search..." aria-label="Search" />
@@ -48,27 +50,20 @@
       </div>
     </div>
 
-    <!-- White nav: logo left + menu -->
+    <!-- White nav: half menu left | logo center | half menu right -->
     <div class="header-main">
       <div class="header-main-inner">
-        <a class="brand" href="index.html" aria-label="ITC India Home">
-          <img src="assets/logo.png" alt="ITC India — Institute of Testing &amp; Certification India Pvt. Ltd." class="brand-logo" />
-          <span class="brand-tagline">Institute of Testing &amp; Certification India Pvt. Ltd.</span>
-        </a>
-
         <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
 
-        <nav class="main-nav" aria-label="Primary">
+        <nav class="main-nav main-nav--left" aria-label="Primary left">
           <ul class="nav-list">
-            <li><a class="nav-link is-active" href="index.html">Home</a></li>
             <li class="has-sub">
-              <a class="nav-link" href="pages/about.html">About Us <span class="caret" aria-hidden="true">▾</span></a>
+              <a class="nav-link" href="pages/calibration.html">Calibration <span class="caret" aria-hidden="true">▾</span></a>
               <ul class="sub-menu">
-                <li><a href="pages/about.html">Company Overview</a></li>
-                <li><a href="pages/about.html#accreditation">Accreditation</a></li>
-                <li><a href="pages/about.html#infrastructure">Infrastructure</a></li>
+                <li><a href="pages/calibration.html">Overview</a></li>
+                <li><a href="pages/quote.html">Request Quote</a></li>
               </ul>
             </li>
             <li class="has-sub">
@@ -88,46 +83,9 @@
               </ul>
             </li>
             <li class="has-sub">
-              <a class="nav-link" href="pages/laboratory.html">Laboratory/Indicating <span class="caret" aria-hidden="true">▾</span></a>
-              <ul class="sub-menu">
-                <li><a href="pages/laboratory.html">Overview</a></li>
-                <li><a href="pages/quote.html">Request Quote</a></li>
-              </ul>
-            </li>
-            <li class="has-sub">
-              <a class="nav-link" href="pages/environmental.html">Environmental/IP <span class="caret" aria-hidden="true">▾</span></a>
-              <ul class="sub-menu">
-                <li><a href="pages/environmental.html">IP Testing</a></li>
-                <li><a href="pages/environmental.html#climate">Climate Tests</a></li>
-                <li><a href="pages/quote.html">Request Quote</a></li>
-              </ul>
-            </li>
-            <li class="has-sub">
-              <a class="nav-link" href="pages/mechanical.html">Mechanical/Chemical <span class="caret" aria-hidden="true">▾</span></a>
-              <ul class="sub-menu">
-                <li><a href="pages/mechanical.html">Overview</a></li>
-                <li><a href="pages/quote.html">Request Quote</a></li>
-              </ul>
-            </li>
-            <li class="has-sub">
-              <a class="nav-link" href="pages/calibration.html">Calibration <span class="caret" aria-hidden="true">▾</span></a>
-              <ul class="sub-menu">
-                <li><a href="pages/calibration.html">Overview</a></li>
-                <li><a href="pages/quote.html">Request Quote</a></li>
-              </ul>
-            </li>
-            <li class="has-sub">
               <a class="nav-link" href="pages/electronic.html">Electronic <span class="caret" aria-hidden="true">▾</span></a>
               <ul class="sub-menu">
                 <li><a href="pages/electronic.html">Overview</a></li>
-                <li><a href="pages/quote.html">Request Quote</a></li>
-              </ul>
-            </li>
-            <li class="has-sub">
-              <a class="nav-link" href="pages/photometry.html">Photometry <span class="caret" aria-hidden="true">▾</span></a>
-              <ul class="sub-menu">
-                <li><a href="pages/photometry.html">LED Testing</a></li>
-                <li><a href="pages/photometry.html#standards">LM-79 / LM-80</a></li>
                 <li><a href="pages/quote.html">Request Quote</a></li>
               </ul>
             </li>
@@ -140,6 +98,44 @@
               </ul>
             </li>
             <li class="has-sub">
+              <a class="nav-link" href="pages/environmental.html">Environmental/IP <span class="caret" aria-hidden="true">▾</span></a>
+              <ul class="sub-menu">
+                <li><a href="pages/environmental.html">IP Testing</a></li>
+                <li><a href="pages/environmental.html#climate">Climate Tests</a></li>
+                <li><a href="pages/quote.html">Request Quote</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <a class="brand" href="index.html" aria-label="ITC India Home">
+          <img src="assets/logo.png" alt="ITC India — Institute of Testing &amp; Certification India Pvt. Ltd." class="brand-logo" />
+        </a>
+
+        <nav class="main-nav main-nav--right" aria-label="Primary right">
+          <ul class="nav-list">
+            <li class="has-sub">
+              <a class="nav-link" href="pages/information-security.html">Information Security <span class="caret" aria-hidden="true">▾</span></a>
+              <ul class="sub-menu">
+                <li><a href="pages/information-security.html">Overview</a></li>
+                <li><a href="pages/quote.html">Request Quote</a></li>
+              </ul>
+            </li>
+            <li class="has-sub">
+              <a class="nav-link" href="pages/laboratory.html">Laboratory/Indicating <span class="caret" aria-hidden="true">▾</span></a>
+              <ul class="sub-menu">
+                <li><a href="pages/laboratory.html">Overview</a></li>
+                <li><a href="pages/quote.html">Request Quote</a></li>
+              </ul>
+            </li>
+            <li class="has-sub">
+              <a class="nav-link" href="pages/mechanical.html">Mechanical/Chemical <span class="caret" aria-hidden="true">▾</span></a>
+              <ul class="sub-menu">
+                <li><a href="pages/mechanical.html">Overview</a></li>
+                <li><a href="pages/quote.html">Request Quote</a></li>
+              </ul>
+            </li>
+            <li class="has-sub">
               <a class="nav-link" href="pages/packaging.html">Packaging <span class="caret" aria-hidden="true">▾</span></a>
               <ul class="sub-menu">
                 <li><a href="pages/packaging.html">Overview</a></li>
@@ -147,16 +143,17 @@
               </ul>
             </li>
             <li class="has-sub">
-              <a class="nav-link" href="pages/software.html">Software <span class="caret" aria-hidden="true">▾</span></a>
+              <a class="nav-link" href="pages/photometry.html">Photometry <span class="caret" aria-hidden="true">▾</span></a>
               <ul class="sub-menu">
-                <li><a href="pages/software.html">Overview</a></li>
+                <li><a href="pages/photometry.html">LED Testing</a></li>
+                <li><a href="pages/photometry.html#standards">LM-79 / LM-80</a></li>
                 <li><a href="pages/quote.html">Request Quote</a></li>
               </ul>
             </li>
             <li class="has-sub">
-              <a class="nav-link" href="pages/information-security.html">Information Security <span class="caret" aria-hidden="true">▾</span></a>
+              <a class="nav-link" href="pages/software.html">Software <span class="caret" aria-hidden="true">▾</span></a>
               <ul class="sub-menu">
-                <li><a href="pages/information-security.html">Overview</a></li>
+                <li><a href="pages/software.html">Overview</a></li>
                 <li><a href="pages/quote.html">Request Quote</a></li>
               </ul>
             </li>
@@ -271,6 +268,48 @@
       </div>
     </section>
 
+    <!-- Our Credentials -->
+    <section class="credentials" id="credentials" aria-labelledby="credentials-title">
+      <div class="credentials-inner">
+        <header class="credentials-head">
+          <p class="credentials-eyebrow"><span>Accreditations &amp; Partners</span></p>
+          <h2 id="credentials-title" class="credentials-title">Our Credentials</h2>
+        </header>
+
+        <div class="credentials-grid">
+          <article class="cred-item">
+            <div class="cred-logo cred-logo--nabl">
+              <img src="assets/nabl.png?v=7" alt="NABL — National Accreditation Board for Testing and Calibration Laboratories" />
+            </div>
+            <div class="cred-copy">
+              <h3 class="cred-name">NABL Accredited – 17025</h3>
+              <p class="cred-text">ITC India is accredited by NABL as per ISO 17025 in the field of Photometry, Electrical Safety Testing for Household Equipment, Electro-Medical Equipment, Laboratory Equipment &amp; Luminaires.</p>
+            </div>
+          </article>
+
+          <article class="cred-item">
+            <div class="cred-logo cred-logo--euro">
+              <img src="assets/eurocert.png?v=2" alt="Eurocert Notified Body 1128" />
+            </div>
+            <div class="cred-copy">
+              <h3 class="cred-name">Eurocert Notified Body 1128</h3>
+              <p class="cred-text">Eurocert is a Notified Body No. 1128 in Lifts, Machinery &amp; Pressure Equipment Directive. They rely on our reports and find our services professional and reliable.</p>
+            </div>
+          </article>
+
+          <article class="cred-item">
+            <div class="cred-logo">
+              <img src="assets/dedal.png?v=2" alt="Dedal Attestation &amp; Certification — Notified Body 1922" />
+            </div>
+            <div class="cred-copy">
+              <h3 class="cred-name">Dedal – Notified Body 1922</h3>
+              <p class="cred-text">Dedal is a Notified Body with a focus on Construction Product Directive. They find ITC India staff competent and professional and accept reports issued by us.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- SECTION 1: Services showcase (after hero) -->
     <section class="section-one" id="section-1">
       <div class="section-one-inner">
@@ -316,50 +355,8 @@
         </article>
       </div>
     </section>
-
-    <!-- SECTION 2: Trust cards -->
-    <section id="section-2" class="section-two" style="display:block;visibility:visible;opacity:1;position:relative;z-index:30;background:#eef3fb;padding:2.5rem 1rem 3rem;margin:0;">
-      <div class="section-two-inner" style="width:min(1180px,100%);margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;">
-        <div class="section-two-card" style="display:flex;align-items:center;gap:0.9rem;background:#fff;border:1px solid #d9e1ef;border-radius:1rem;box-shadow:0 12px 28px rgba(15,23,42,0.1);padding:1.2rem;">
-          <span style="width:2.6rem;height:2.6rem;border-radius:0.75rem;background:#e8f1ff;color:#1f6fe5;display:grid;place-items:center;flex-shrink:0;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.1 4.3 4.7.7-3.4 3.3.8 4.7L12 14.8 7.8 16l.8-4.7L5.2 8l4.7-.7L12 3z" stroke="currentColor" stroke-width="1.6"/><path d="M8 20h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          </span>
-          <div>
-            <strong style="display:block;color:#0f172a;font-size:1rem;">NABL Accredited</strong>
-            <span style="display:block;margin-top:0.2rem;color:#5a6785;font-size:0.85rem;">ISO/IEC 17025</span>
-          </div>
-        </div>
-        <div class="section-two-card" style="display:flex;align-items:center;gap:0.9rem;background:#fff;border:1px solid #d9e1ef;border-radius:1rem;box-shadow:0 12px 28px rgba(15,23,42,0.1);padding:1.2rem;">
-          <span style="width:2.6rem;height:2.6rem;border-radius:0.75rem;background:#e8f1ff;color:#1f6fe5;display:grid;place-items:center;flex-shrink:0;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.6-2.9 8-7 9.2C7.9 19 5 15.6 5 11V6l7-3z" stroke="currentColor" stroke-width="1.6"/><path d="M9.2 11.8l1.9 1.9 3.8-3.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          </span>
-          <div>
-            <strong style="display:block;color:#0f172a;font-size:1rem;">Reliable &amp; Accurate</strong>
-            <span style="display:block;margin-top:0.2rem;color:#5a6785;font-size:0.85rem;">Test Results</span>
-          </div>
-        </div>
-        <div class="section-two-card" style="display:flex;align-items:center;gap:0.9rem;background:#fff;border:1px solid #d9e1ef;border-radius:1rem;box-shadow:0 12px 28px rgba(15,23,42,0.1);padding:1.2rem;">
-          <span style="width:2.6rem;height:2.6rem;border-radius:0.75rem;background:#e8f1ff;color:#1f6fe5;display:grid;place-items:center;flex-shrink:0;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.25" stroke="currentColor" stroke-width="1.6"/><path d="M3.8 12h16.4M12 3.8c2.2 2.3 3.4 5.1 3.4 8.2S14.2 18 12 20.2C9.8 18 8.6 15.1 8.6 12S9.8 6.1 12 3.8z" stroke="currentColor" stroke-width="1.5"/></svg>
-          </span>
-          <div>
-            <strong style="display:block;color:#0f172a;font-size:1rem;">Global Standards</strong>
-            <span style="display:block;margin-top:0.2rem;color:#5a6785;font-size:0.85rem;">Market Acceptance</span>
-          </div>
-        </div>
-        <div class="section-two-card" style="display:flex;align-items:center;gap:0.9rem;background:#fff;border:1px solid #d9e1ef;border-radius:1rem;box-shadow:0 12px 28px rgba(15,23,42,0.1);padding:1.2rem;">
-          <span style="width:2.6rem;height:2.6rem;border-radius:0.75rem;background:#e8f1ff;color:#1f6fe5;display:grid;place-items:center;flex-shrink:0;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="9.5" r="2.1" stroke="currentColor" stroke-width="1.6"/><path d="M4 18.2c.6-2.3 2.5-3.6 5-3.6s4.4 1.3 5 3.6M13.4 14c1.4-.3 2.9 0 4.1.9.8.6 1.4 1.6 1.7 3.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          </span>
-          <div>
-            <strong style="display:block;color:#0f172a;font-size:1rem;">Expert Engineers</strong>
-            <span style="display:block;margin-top:0.2rem;color:#5a6785;font-size:0.85rem;">Technical Support</span>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <script src="js/main.js?v=5"></script>
+  <script src="js/main.js?v=6"></script>
 </body>
 </html>

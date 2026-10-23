@@ -5,3 +5,11 @@ Desktop.ini
 assets/_logo_*.jpg
 ChatGPT Image*.png
 Untitled design.png
+Untitled design*.png
+node_modules
+.next
+out
+*.log
+.DS_Store
+tsconfig.tsbuildinfo
+nabl-source.jpg
