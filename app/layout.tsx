@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import "./globals.css";
 
@@ -15,13 +16,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap"
           rel="stylesheet"
         />
       </head>
       <body>
         <SiteHeader />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );

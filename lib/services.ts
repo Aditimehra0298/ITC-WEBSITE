@@ -105,72 +105,81 @@ export type HeroSlide = {
   secondaryHref: string;
   secondaryLabel: string;
   stats?: { value: string; label: string }[];
+  /** Pre-composited art (left fade + trails) — lighter overlay */
+  artReady?: boolean;
 };
 
 export const heroSlides: HeroSlide[] = [
   {
-    image: "/hero-2.png",
-    eyebrow: "ISO/IEC 17025 | NABL ACCREDITED TESTING LABORATORY",
-    titleHtml: 'Precision Testing.<br /><span class="title-accent">Trusted Results.</span>',
-    desc: "Delivering reliable testing solutions for electrical, electronic, mechanical, medical, lighting, environmental and industrial products.",
+    image: "/hero-precision.png",
+    eyebrow: "NABL ACCREDITED  ·  ISO/IEC 17025",
+    titleHtml:
+      '<span class="title-line">PRECISION</span><br /><span class="title-accent">TESTING</span>',
+    desc: "Reliable laboratory testing for electrical, electronic, medical, lighting and industrial products — trusted worldwide.",
     primaryHref: "/quote",
     secondaryHref: "#credentials",
-    secondaryLabel: "Explore Our Capabilities",
-    stats: [
-      { value: "1000+", label: "Products Tested" },
-      { value: "50+", label: "Industries Supported" },
-      { value: "Global", label: "Market Acceptance" },
-    ],
+    secondaryLabel: "Explore Capabilities",
+    artReady: true,
   },
   {
-    image: "/hero-4.png",
-    eyebrow: "ELECTRICAL SAFETY TESTING",
-    titleHtml: "Safety Tested.<br />Confidence Delivered.",
-    desc: "Comprehensive electrical safety testing for products and equipment against applicable national and international standards.",
-    meta: "IEC 60335  |  IEC 62368-1  |  IEC 60598-1",
+    image: "/hero-safety.png",
+    eyebrow: "ELECTRICAL SAFETY",
+    titleHtml:
+      '<span class="title-line">SAFETY</span><br /><span class="title-accent">TESTED</span>',
+    desc: "Comprehensive electrical safety testing against national and international standards.",
+    meta: "IEC 60335  ·  IEC 62368-1  ·  IEC 60598-1",
     primaryHref: "/quote",
     secondaryHref: "/electrical",
     secondaryLabel: "Explore Electrical Testing",
+    artReady: true,
   },
   {
-    image: "/hero-3.png",
-    eyebrow: "LED & PHOTOMETRIC TESTING",
-    titleHtml: "Illuminating Quality<br />Through Precision.",
-    desc: "Accurate testing of LED products and luminaires for electrical safety, light output and performance.",
-    meta: "IEC 60598  |  LM-79  |  LM-80  |  TM-21",
+    image: "/hero-photometry.png",
+    eyebrow: "LED & PHOTOMETRY",
+    titleHtml:
+      '<span class="title-line">LIGHT</span><br /><span class="title-accent">MEASURED</span>',
+    desc: "Accurate testing of LED products and luminaires for safety, output and performance.",
+    meta: "IEC 60598  ·  LM-79  ·  LM-80  ·  TM-21",
     primaryHref: "/quote",
     secondaryHref: "/photometry",
     secondaryLabel: "Explore Lighting Testing",
+    artReady: true,
   },
   {
-    image: "/hero-2.png",
-    eyebrow: "ENVIRONMENTAL & IP TESTING",
-    titleHtml: "Tested for Every<br />Environment.",
-    desc: "Evaluate product durability and protection against dust, water, temperature and environmental conditions.",
-    meta: "IEC 60529  |  IEC 60068  |  IEC 62262",
+    image: "/hero-environmental.png",
+    eyebrow: "ENVIRONMENTAL & IP",
+    titleHtml:
+      '<span class="title-line">BUILT FOR</span><br /><span class="title-accent">EVERY CLIMATE</span>',
+    desc: "Durability and protection testing against dust, water, temperature and harsh environments.",
+    meta: "IEC 60529  ·  IEC 60068  ·  IEC 62262",
     primaryHref: "/quote",
     secondaryHref: "/environmental",
     secondaryLabel: "Explore Environmental Testing",
+    artReady: true,
   },
   {
-    image: "/hero-4.png",
-    eyebrow: "EMC / EMI TESTING",
-    titleHtml: "Engineered for Electromagnetic<br />Compatibility.",
-    desc: "Testing electromagnetic emissions and immunity to support reliable operation and regulatory compliance.",
-    meta: "CISPR 11  |  CISPR 32  |  IEC 61000 Series",
+    image: "/hero-emc.png",
+    eyebrow: "EMC / EMI",
+    titleHtml:
+      '<span class="title-line">SIGNAL</span><br /><span class="title-accent">INTEGRITY</span>',
+    desc: "Emissions and immunity testing for reliable operation and regulatory compliance.",
+    meta: "CISPR 11  ·  CISPR 32  ·  IEC 61000",
     primaryHref: "/quote",
     secondaryHref: "/emc",
     secondaryLabel: "Explore EMC Testing",
+    artReady: true,
   },
   {
-    image: "/hero-2.png",
-    eyebrow: "ELECTRO-MEDICAL EQUIPMENT TESTING",
-    titleHtml: "Testing Technology That<br />Supports Healthcare.",
-    desc: "Electrical safety and performance testing for medical electrical equipment and related systems.",
-    meta: "IEC 60601-1  |  IEC 60601-1-2  |  Applicable IEC 60601-2 Standards",
+    image: "/hero-medical.png",
+    eyebrow: "ELECTRO-MEDICAL",
+    titleHtml:
+      '<span class="title-line">CARE</span><br /><span class="title-accent">ASSURED</span>',
+    desc: "Electrical safety and performance testing for medical electrical equipment.",
+    meta: "IEC 60601-1  ·  IEC 60601-1-2",
     primaryHref: "/quote",
     secondaryHref: "/electro-medical",
     secondaryLabel: "Explore Medical Testing",
+    artReady: true,
   },
 ];
 

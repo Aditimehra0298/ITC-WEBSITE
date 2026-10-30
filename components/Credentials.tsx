@@ -27,6 +27,15 @@ const items = [
 export default function Credentials() {
   return (
     <section className="credentials" id="credentials" aria-labelledby="credentials-title">
+      <Image
+        src="/credentials-bg.png"
+        alt=""
+        fill
+        sizes="100vw"
+        className="credentials-bg"
+        priority={false}
+      />
+      <div className="credentials-veil" aria-hidden="true" />
       <div className="credentials-inner">
         <header className="credentials-head">
           <p className="credentials-eyebrow">

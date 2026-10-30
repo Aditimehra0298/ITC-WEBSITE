@@ -6,24 +6,21 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { leftNav, rightNav, type NavMenuItem } from "@/lib/nav";
 
+const headerNav: NavMenuItem[] = [...leftNav, ...rightNav];
+
 function NavGroup({
   items,
-  side,
   active,
   open,
 }: {
   items: NavMenuItem[];
-  side: "left" | "right";
   active: string;
   open: boolean;
 }) {
   const [flyout, setFlyout] = useState<string | null>(null);
 
   return (
-    <nav
-      className={`main-nav main-nav--${side}${open ? " is-open" : ""}`}
-      aria-label={side === "left" ? "Primary left" : "Primary right"}
-    >
+    <nav className={`main-nav main-nav--primary${open ? " is-open" : ""}`} aria-label="Primary">
       <ul className="nav-list">
         {items.map((item) => {
           const hasMega = Boolean(item.children?.length);
@@ -93,7 +90,7 @@ export default function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="site-header">
+    <header className="site-header site-header--cinema">
       <div className="header-top">
         <div className="header-top-inner">
           <div className="header-contacts">
@@ -155,7 +152,7 @@ export default function SiteHeader() {
                 </svg>
               </button>
             </form>
-            <Link className="btn btn-primary btn-quote" href="/quote">
+            <Link className="btn btn-quote btn-quote--silver" href="/quote">
               Get a Quote <span aria-hidden="true">→</span>
             </Link>
           </div>
@@ -176,20 +173,18 @@ export default function SiteHeader() {
             <span></span>
           </button>
 
-          <NavGroup items={leftNav} side="left" active={active} open={menuOpen} />
-
           <Link className="brand" href="/" aria-label="ITC India Home">
             <Image
-              src="/logo.png"
-              alt="ITC India — Institute of Testing & Certification India Pvt. Ltd."
-              className="brand-logo"
-              width={260}
-              height={88}
+              src="/logo-cinema.png"
+              alt="ITC India"
+              className="brand-logo brand-logo--cinema"
+              width={280}
+              height={92}
               priority
             />
           </Link>
 
-          <NavGroup items={rightNav} side="right" active={active} open={menuOpen} />
+          <NavGroup items={headerNav} active={active} open={menuOpen} />
         </div>
       </div>
     </header>

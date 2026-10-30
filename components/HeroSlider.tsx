@@ -17,62 +17,67 @@ export default function HeroSlider() {
   }, [total]);
 
   const go = (i: number) => setIndex((i + total) % total);
+  const slide = heroSlides[index];
 
   return (
     <section className="hero-wrap" id="home">
-      <div className="hero" aria-roledescription="carousel" aria-label="Featured capabilities">
+      <div className="hero hero--cinema" aria-roledescription="carousel" aria-label="Featured capabilities">
         <div className="hero-track">
-          {heroSlides.map((slide, i) => (
+          {heroSlides.map((item, i) => (
             <article
               key={i}
-              className={`hero-slide${i === index ? " is-active" : ""}`}
+              className={`hero-slide${i === index ? " is-active" : ""}${item.artReady ? " hero-slide--art" : ""}`}
               data-index={i}
               hidden={i !== index}
             >
               <Image
                 className="hero-media"
-                src={slide.image}
+                src={item.image}
                 alt=""
                 fill
                 sizes="100vw"
-                priority={i === 0}
+                priority={i === 0 || item.artReady}
               />
-              <div className="hero-content">
-                <p className="hero-eyebrow">{slide.eyebrow}</p>
-                {i === 0 ? (
-                  <h1
-                    className="hero-title"
-                    dangerouslySetInnerHTML={{ __html: slide.titleHtml }}
-                  />
-                ) : (
-                  <h2
-                    className="hero-title"
-                    dangerouslySetInnerHTML={{ __html: slide.titleHtml }}
-                  />
-                )}
-                <p className="hero-desc">{slide.desc}</p>
-                {slide.meta ? <p className="hero-meta">{slide.meta}</p> : null}
-                <div className="hero-actions">
-                  <Link className="btn btn-primary" href={slide.primaryHref}>
-                    Get a Quote <span aria-hidden="true">→</span>
-                  </Link>
-                  <Link className="btn btn-outline-navy" href={slide.secondaryHref}>
-                    {slide.secondaryLabel}
-                  </Link>
-                </div>
-                {slide.stats ? (
-                  <div className="hero-stats">
-                    {slide.stats.map((s) => (
-                      <div className="hero-stat" key={s.label}>
-                        <strong>{s.value}</strong>
-                        <span>{s.label}</span>
-                      </div>
-                    ))}
-                  </div>
-                ) : null}
-              </div>
+              <div className="hero-veil" aria-hidden="true" />
+              <div className="hero-sheen" aria-hidden="true" />
             </article>
           ))}
+        </div>
+
+        <div
+          className={`hero-content${slide.artReady ? " hero-content--art" : ""}`}
+          key={index}
+        >
+          <p className="hero-eyebrow">
+            <span className="hero-eyebrow-text">{slide.eyebrow}</span>
+            <span className="hero-eyebrow-line" aria-hidden="true" />
+          </p>
+          {index === 0 ? (
+            <h1
+              className="hero-title"
+              dangerouslySetInnerHTML={{ __html: slide.titleHtml }}
+            />
+          ) : (
+            <h2
+              className="hero-title"
+              dangerouslySetInnerHTML={{ __html: slide.titleHtml }}
+            />
+          )}
+          <p className="hero-desc">{slide.desc}</p>
+          {slide.meta ? <p className="hero-meta">{slide.meta}</p> : null}
+          <div className="hero-actions">
+            <Link className="hero-orb" href={slide.primaryHref} aria-label="Get a Quote">
+              <span aria-hidden="true">→</span>
+            </Link>
+            <div className="hero-cta-copy">
+              <Link className="hero-cta-main" href={slide.primaryHref}>
+                Get a Quote
+              </Link>
+              <Link className="hero-cta-sub" href={slide.secondaryHref}>
+                {slide.secondaryLabel}
+              </Link>
+            </div>
+          </div>
         </div>
 
         <button

@@ -9,6 +9,7 @@ import {
   iec60335References,
   iec60335Related,
   iec60335Sidebar,
+  iec60335Trust,
   iec60335Why,
 } from "@/lib/iec60335";
 
@@ -23,57 +24,56 @@ function Icon({ d }: { d: string }) {
 export default function Iec60335Page() {
   return (
     <main className="std-page">
-      {/* Hero: text left, appliances image right — same as mockup */}
-      <section className="std-hero std-hero--split">
-        <div className="std-hero-copy">
-          <div className="std-hero-copy-inner">
-            <nav className="std-crumbs std-crumbs--dark" aria-label="Breadcrumb">
-              <Link href="/">Home</Link>
-              <span>/</span>
-              <Link href="/electrical">Electrical Testing</Link>
-              <span>/</span>
-              <span>IEC 60335-1</span>
-            </nav>
-            <p className="std-eyebrow std-eyebrow--blue">Household Electrical Appliance Testing</p>
-            <h1>IEC 60335-1 / IS 302-1 and BS EN 60335-1</h1>
-            <p className="std-hero-lead std-hero-lead--dark">
-              Safety testing for household and similar electrical appliances under normal operating and
-              fault conditions.
-            </p>
-            <div className="std-hero-actions">
-              <Link className="btn btn-primary" href="/quote">
-                Get a Quote <span aria-hidden="true">→</span>
-              </Link>
-              <a className="btn btn-outline-navy" href="mailto:info@itcindia.org">
-                Talk to Our Experts
-              </a>
-            </div>
-          </div>
-        </div>
+      {/* Hero: white text left → soft fade → appliances image right */}
+      <section className="std-hero std-hero--fade">
         <div className="std-hero-media">
           <Image
             src="/std/hero.jpg"
             alt="Household electrical appliances"
             fill
             priority
-            sizes="(max-width:900px) 100vw, 50vw"
+            sizes="(max-width:900px) 100vw, 55vw"
           />
+        </div>
+        <div className="std-hero-shade" aria-hidden="true" />
+        <div className="std-hero-panel">
+          <nav className="std-crumbs std-crumbs--dark" aria-label="Breadcrumb">
+            <Link href="/">Home</Link>
+            <span aria-hidden="true">/</span>
+            <Link href="/#section-1">Testing Services</Link>
+            <span aria-hidden="true">/</span>
+            <Link href="/electrical">Electrical Testing</Link>
+            <span aria-hidden="true">/</span>
+            <span className="std-crumb-current">IEC 60335-1</span>
+          </nav>
+          <p className="std-eyebrow std-eyebrow--blue">Household Electrical Appliance Testing</p>
+          <h1>IEC 60335-1 / IS 302-1 AND BS EN 60335-1</h1>
+          <p className="std-hero-lead std-hero-lead--dark">
+            Safety testing for household and similar electrical appliances under normal operating and
+            fault conditions.
+          </p>
+          <div className="std-hero-actions">
+            <Link className="btn btn-primary" href="/quote">
+              Get a Quote <span aria-hidden="true">→</span>
+            </Link>
+            <a className="btn btn-outline-navy" href="mailto:info@itcindia.org">
+              Talk to the Experts
+            </a>
+          </div>
         </div>
       </section>
 
       <section className="std-trust">
         <div className="std-wrap std-trust-grid">
-          {[
-            { t: "NABL Accredited", d: "M12 3l7 3v5c0 4.6-2.9 8-7 9.2C7.9 19 5 15.6 5 11V6l7-3zM9.2 11.8l1.9 1.9 3.8-3.9" },
-            { t: "Reliable & Accurate", d: "M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 8v4l2.5 2.5" },
-            { t: "Global Standards", d: "M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3.8 12h16.4M12 3.8c2.2 2.3 3.4 5.1 3.4 8.2S14.2 18 12 20.2" },
-            { t: "Expert Technical Team", d: "M9 9a2.4 2.4 0 1 0 0-4.8A2.4 2.4 0 0 0 9 9zM16 9.5a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2zM4 18.2c.6-2.3 2.5-3.6 5-3.6s4.4 1.3 5 3.6" },
-          ].map((item) => (
+          {iec60335Trust.map((item) => (
             <div key={item.t} className="std-trust-item">
               <span className="std-trust-ico">
                 <Icon d={item.d} />
               </span>
-              <strong>{item.t}</strong>
+              <div>
+                <strong>{item.t}</strong>
+                <span className="std-trust-sub">{item.s}</span>
+              </div>
             </div>
           ))}
         </div>
@@ -82,42 +82,50 @@ export default function Iec60335Page() {
       <section className="std-body">
         <div className="std-wrap std-layout">
           <div className="std-main">
+            <p className="std-kicker">Overview</p>
             <h2>IEC 60335-1 Safety Testing</h2>
             <p>
-              ITC India provides IEC 60335-1 safety testing for household and similar electrical
-              appliances to help manufacturers evaluate electrical, thermal, mechanical and fire-related
-              hazards before certification or market release.
+              IEC 60335-1 Safety Testing India is used to evaluate the safety of household and similar
+              electrical appliances under normal operating and fault conditions.
             </p>
             <p>
-              IEC 60335-1 establishes the general safety requirements used across the IEC 60335 family of
-              appliance standards. The base standard is combined with the applicable product-specific Part
-              2 standard for appliances such as washing machines, electric irons, shavers, kitchen
-              machines, warming plates, refrigerators and other household products.
+              At ITC India, we provide IEC 60335-1 Safety Testing India services for manufacturers,
+              importers, and product developers. Our testing services help electrical appliances comply
+              with international and Indian safety requirements.
             </p>
-
-            <h2>IS 302-1 and BS EN 60335-1 Testing</h2>
             <p>
-              In India, IS 302 (Part 1):2024 is aligned with IEC 60335-1:2020. BS EN 60335-1 is the
-              European adoption of the same safety family for market access where EN-based conformity is
-              required.
+              IEC 60335-1 specifies general safety requirements for household and similar electrical
+              appliances. Additionally, IS 302-1 and BS EN 60335-1 are aligned standards used for
+              compliance in India and European markets.
             </p>
 
-            {/* Callout — same position as mockup */}
+            {/* Callout — document icon + copy + world map graphic */}
             <aside className="std-callout">
               <span className="std-callout-ico" aria-hidden="true">
                 <Icon d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5zM14 3v5h5" />
               </span>
-              <div>
-                <strong>Adopted in India as IS 302-1 Part 1</strong>
-                <p>
-                  The Indian National Standard for household and similar electrical appliances — aligned
-                  with IEC 60335-1 for domestic and similar use.
-                </p>
+              <div className="std-callout-copy">
+                <strong>Adopted in India as IS 302-1 (Part 1)</strong>
+                <p>Harmonised with IEC 60335-1 and recognised for global market access.</p>
               </div>
-              <span className="std-callout-map" aria-hidden="true">
-                <Icon d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3.8 12h16.4M12 3.8c2.2 2.3 3.4 5.1 3.4 8.2S14.2 18 12 20.2C9.8 18 8.6 15.1 8.6 12S9.8 6.1 12 3.8z" />
-              </span>
+              <div className="std-callout-map">
+                <Image
+                  src="/std/world-map.png"
+                  alt="Global market access"
+                  width={160}
+                  height={100}
+                  className="std-callout-map-img"
+                />
+              </div>
             </aside>
+
+            <p className="std-kicker">Standards</p>
+            <h2>IS 302-1 and BS EN 60335-1 Testing</h2>
+            <p>
+              IS 302-1 is the Indian standard harmonised with IEC 60335-1 for electrical appliance safety
+              evaluation. BS EN 60335-1 is the European adoption of IEC 60335-1 used for household
+              appliance safety compliance in European markets.
+            </p>
 
             {/* Checklist left + tech photo right — same as mockup */}
             <div className="std-eval-row">
@@ -139,6 +147,10 @@ export default function Iec60335Page() {
 
             {/* Products grid — same position */}
             <h2>Products Covered Under IEC 60335-1</h2>
+            <p>
+              IEC 60335-1 Safety Testing India applies to a wide range of household and commercial
+              electrical appliances, including:
+            </p>
             <div className="std-products">
               {iec60335Products.map((item) => (
                 <article key={item.title} className="std-product">
@@ -152,7 +164,12 @@ export default function Iec60335Page() {
 
             {/* Wide kitchen banner under products — same as mockup */}
             <div className="std-banner">
-              <Image src="/std/hero.jpg" alt="Kitchen and household appliances" fill sizes="960px" />
+              <Image
+                src="/std/products-banner.png"
+                alt="Kitchen and household appliances"
+                fill
+                sizes="960px"
+              />
             </div>
           </div>
 
@@ -164,24 +181,34 @@ export default function Iec60335Page() {
                 {iec60335Sidebar.map((item) => (
                   <li key={item.label}>
                     <Link className={item.active ? "is-active" : undefined} href={item.href}>
-                      {item.label}
+                      <span>{item.label}</span>
+                      <span className="std-side-arrow" aria-hidden="true">
+                        ›
+                      </span>
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
             <div className="std-quote-box">
-              <div className="std-quote-photo">
-                <Image src="/std/quote-person.jpg" alt="" fill sizes="320px" />
-              </div>
+              <Image
+                src="/std/quote-person.png"
+                alt=""
+                fill
+                sizes="400px"
+                className="std-quote-bg"
+              />
               <div className="std-quote-body">
                 <h3>Need This Testing? Get a Quote Today!</h3>
-                <p>Share product details and we will respond with scope, timeline and charges.</p>
+                <p>Ensure your products meet international safety requirements with ITC India.</p>
                 <Link className="btn btn-primary" href="/quote">
                   Get a Quote <span aria-hidden="true">→</span>
                 </Link>
                 <a className="std-phone" href="tel:+919316473033">
-                  Tel: 09316473033
+                  +91 93164 73033
+                </a>
+                <a className="std-phone" href="tel:+919882382261">
+                  +91 98823 82261
                 </a>
                 <a className="std-phone" href="mailto:info@itcindia.org">
                   info@itcindia.org
@@ -210,6 +237,9 @@ export default function Iec60335Page() {
                 </div>
               ))}
             </div>
+            <p className="std-params-note">
+              Additionally, testing helps identify safety risks before product launch and certification.
+            </p>
           </div>
         </div>
       </section>
@@ -219,6 +249,7 @@ export default function Iec60335Page() {
         <div className="std-wrap std-cap-grid">
           <div>
             <h2>Testing Capabilities at ITC India</h2>
+            <p>ITC India provides:</p>
             <ul>
               {iec60335Capabilities.map((item) => (
                 <li key={item}>
@@ -227,6 +258,10 @@ export default function Iec60335Page() {
                 </li>
               ))}
             </ul>
+            <p>
+              Our laboratory infrastructure supports testing for domestic, commercial, and industrial
+              electrical products.
+            </p>
           </div>
           <div className="std-cap-media">
             <Image src="/std/cap-lab.jpg" alt="ITC India laboratory capabilities" fill sizes="640px" />
@@ -237,6 +272,7 @@ export default function Iec60335Page() {
       <section className="std-apps">
         <div className="std-wrap">
           <h2>Applications</h2>
+          <p className="std-apps-lead">Safety testing is applicable for:</p>
           <div className="std-apps-grid">
             {iec60335Applications.map((item) => (
               <article key={item.title} className="std-app">
@@ -288,8 +324,8 @@ export default function Iec60335Page() {
         </div>
       </section>
 
-      <section className="std-cta">
-        <Image src="/cta-circuit.jpg" alt="" fill sizes="100vw" className="std-cta-bg" />
+      <section className="std-cta std-cta--wide">
+        <Image src="/std/cta-pcb.png" alt="" fill sizes="100vw" className="std-cta-bg" priority={false} />
         <div className="std-wrap std-cta-inner">
           <div>
             <h2>Ensure Product Safety and Global Compliance</h2>

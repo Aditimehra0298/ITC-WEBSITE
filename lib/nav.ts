@@ -42,8 +42,8 @@ export const mainNav: NavMenuItem[] = [
         href: q("household-appliances"),
         children: [
           { label: "IEC 60335-1 / IS 302-1 and BS EN 60335-1", href: std("iec-60335-1") },
-          { label: "IEC 60335-2-3 Electric Irons Safety Testing", href: q("iec-60335-2-3") },
-          { label: "IEC 60335-2-3 / IS 302-2-3 Electric Iron Testing", href: q("iec-60335-2-3-is") },
+          { label: "IEC 60335-2-3 Electric Irons Safety Testing", href: std("iec-60335-2-3") },
+          { label: "IEC 60335-2-3 / IS 302-2-3 Electric Iron Testing", href: std("iec-60335-2-3") },
           { label: "IEC 60335-2-5 Safety of Electric Dishwashers", href: q("iec-60335-2-5") },
           { label: "IEC 60335-2-7 Washing Machine Safety Testing", href: q("iec-60335-2-7") },
           { label: "IEC 60335-2-7 Domestic Washing Machine Testing", href: q("iec-60335-2-7-dom") },
@@ -218,7 +218,7 @@ export const rightNav: NavMenuItem[] = [
     ],
   },
   {
-    label: "Information Security",
+    label: "Info Security",
     href: "/information-security",
     slug: "information-security",
     children: [
